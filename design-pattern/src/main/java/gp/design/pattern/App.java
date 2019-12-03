@@ -1,5 +1,8 @@
 package gp.design.pattern;
 
+import gp.design.pattern.singleton.enums.DataSourceEnum;
+import gp.design.pattern.singleton.enums.DBConnection;
+
 /**
  * 项目名称：GP-Demo
  * 类 名 称：App
@@ -11,7 +14,12 @@ public class App {
 
     public static void main(String[] args) {
 
-        System.out.println("args = [" + args + "]");
+        // 枚举单例
+        DBConnection connection1 = DataSourceEnum.DATASOURCE.getConnection();
+        DBConnection connection2 = DataSourceEnum.DATASOURCE.getConnection();
+
+        System.out.println("connection1 = [" + connection1 + "]");
+        System.out.println("connection2 = [" + connection2 + "]");
 
     }
 
